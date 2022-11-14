@@ -35,6 +35,7 @@ contract VolcanoCoin {
     }
 
     function transferToken(uint256 _amount, address _recipient) public {
+        assert(balances[msg.sender] >= _amount);
         balances[_recipient] = balances[_recipient] + _amount;
         balances[msg.sender] = balances[msg.sender] - _amount;
         emit tokenTransferred(_amount, _recipient);
