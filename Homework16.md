@@ -1,6 +1,7 @@
 # Homework 16
 ## Setup an account on NFT Storage.
 ## Upload an image and then associate this image with one of your Volcano NFTs. Think about a way of automating image generation.
+- NFT https://testnets.opensea.io/assets/goerli/0xc2bd02f7f5f5d6e9cc0ea5a0d783fc8d433c8447/2 </br>
 In order to automate image generation, we need to do so programatically. 
 Nft's are made of:
 1. Images:
