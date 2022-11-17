@@ -14,7 +14,6 @@ contract ShameCoin is ERC20, Ownable {
     mapping(address => bool) public approvals;
 
     constructor() ERC20("ShameCoin", "SHME") {
-        //admins.push(msg.sender);
         admin = msg.sender;
     }
 
@@ -51,7 +50,7 @@ contract ShameCoin is ERC20, Ownable {
         return false;
     }
 
-    /** @notice sets decimals to 0 
+    /** @notice overrides inherited function and sets decimals to 0 
     */
     function decimals() public pure override returns (uint8) {
         return 0;

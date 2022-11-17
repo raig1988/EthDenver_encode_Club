@@ -70,6 +70,5 @@ describe("ShameCoin", function() {
         // check balance of account 1 and should be equal to 0
         const balanceAcc1Moment1 = await shameCoin._balances(accounts[1].address);
         assert.equal(balanceAcc1Moment1.toString(), "0");
-
     })
 })
