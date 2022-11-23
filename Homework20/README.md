@@ -92,9 +92,14 @@ describe("Uniswap", async function() {
     })
 })
 ```
-2. Swap DAI for BUSD
 </br>
-Main net details
-Uniswap V3 router address : 0xE592427A0AEce92De3Edee1F18E0157C05861564
-DAI stablecoin address : 0xE592427A0AEce92De3Edee1F18E0157C05861564
-Binance Account : 0xDFd5293D8e347dFe59E90eFd55b2956a1343963d
+
+2. Swap DAI for BUSD </br>
+DAI for BUSD is a similar process. ABI for contract functions are the same. The only changes would be related to contract addreses and Uniswap pool address.
+
+</br>
+
+#### Main net details
+- Uniswap V3 router address : 0xE592427A0AEce92De3Edee1F18E0157C05861564
+- DAI stablecoin address : 0xE592427A0AEce92De3Edee1F18E0157C05861564
+- Binance Account : 0xDFd5293D8e347dFe59E90eFd55b2956a1343963d
