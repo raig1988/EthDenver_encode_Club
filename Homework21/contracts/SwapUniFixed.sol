@@ -3,31 +3,24 @@
 import "hardhat/console.sol";
 import '@uniswap/v3-periphery/contracts/interfaces/ISwapRouter.sol';
 import '@uniswap/v3-periphery/contracts/libraries/TransferHelper.sol';
+import "@openzeppelin/contracts/interfaces/IERC20.sol";
 
 pragma solidity ^0.8.17;
 pragma abicoder v2;
 
-contract SwapUni {
+contract SwapUniFixed {
 
     ISwapRouter public immutable swapRouter;
-    address TOKEN_IN;
-    address TOKEN_OUT;
-    uint24 FEE;
+    address public constant TOKEN_IN = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
+    address public constant TOKEN_OUT = 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48;
+    uint24 public constant FEE = 100;
 
     constructor(ISwapRouter _swapRouter) {
         swapRouter = _swapRouter;
     }
 
-    function setData(address _tokenIn, address _tokenOut, uint24 _fee) public {
-        TOKEN_IN = _tokenIn;
-        TOKEN_OUT = _tokenOut;
-        FEE = _fee;
-    }
-
-    function swap(uint256 _amountIn) public returns (uint _amountOut) {
-        console.log("Transferring to...");
+    function swap(uint256 _amountIn) external returns (uint _amountOut) {
         TransferHelper.safeTransferFrom(TOKEN_IN, msg.sender, address(this), _amountIn);
-        console.log("Approving token...");
         TransferHelper.safeApprove(TOKEN_IN, address(swapRouter), _amountIn);
         ISwapRouter.ExactInputSingleParams memory params =
             ISwapRouter.ExactInputSingleParams({
